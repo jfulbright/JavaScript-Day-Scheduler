@@ -1,13 +1,13 @@
 
-var time = moment().format("dddd, MMMM Do")
+// Declare variable with current time:
+var time = moment().format("dddd, MMMM Do");
+let currentHour = moment().format("HH");
 $("#currentDay").text(time);
 
-var keyPresses = []; //Store user keypresses in an array
+// Create an object to store timeblock attributes
+var timeBlocks = {};
 
-// Create an object for all timeblocks text.
-const timeBlocks = [];
-
-// jQuery UI Selectable 
+// jQuery UI Selectable Utilitie
   $( function() {
     $( "#selectable" ).selectable({
       stop: function() {
@@ -18,7 +18,23 @@ const timeBlocks = [];
 
           // update timeBlockObject
           console.log(index);
-          // updateTimeblock (index, `My Task${index}`);
+          updateTimeblock (index, `My Task${index}`);
+
+          // Function that captures users key strokes in a variable, 
+          document.addEventListener("keydown", keyPressAction);
+
+          // Declare an array to store user keypresses
+          var keyPresses = [];
+
+          // Function that pushes keys to array and displays in timeblock
+              function keyPressAction(event) {
+                
+                keyPresses.push(event.key);
+                document.querySelector(".ui-selected").innerHTML = keyPresses.join('');
+              }
+
+          // listener function for save button that passes index and keypresses to object 
+
         });
       }
     });
@@ -26,14 +42,7 @@ const timeBlocks = [];
 
 
 
-  // Function that captures users key strokes in a variable, 
-   document.addEventListener("keypress", keyPressAction);
-
-  // Function that displays them in the time block <li>
-      function keyPressAction(event) {
-        keyPresses.push(event.key);
-        document.querySelector(".ui-selected").innerHTML = keyPresses.join('');
-      }
+  
 
 
 
@@ -60,3 +69,17 @@ const timeBlocks = [];
   // Function that switches timeblock css id depending on time of day
     // Previous: if timeblock time (rounded to whol number) is less than current time
     // Current: if timeblock time is between current time
+
+
+
+
+
+    //ToDo:
+    // App Flow:
+      // Selectable Function identifies timeBlock Index
+      // Event listener captures keydown events
+        // diplays on timeBlock
+        // Saves in variable
+      // Event listener on Save button:
+        // Updates TimeEvent Block with index and keystroke vars. 
+      // Pass timeBlock Index to 
