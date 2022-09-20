@@ -23,11 +23,12 @@ textarea {
 
 .description {
   white-space: pre-wrap;
+  color: black
 }
 
 .time-block {
   text-align: center;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 .row {
