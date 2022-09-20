@@ -4,7 +4,7 @@ Jeremy Fulbright - Day Scheduler Project
 ## Project Resources:
 
 - [ ] [GitHub Repo](https://github.com/jfulbright/JavaScript-Day-Scheduler)
-- [ ] [GitHub Pages Demo](https://jfulbright.github.io/Javascript-Day-Scheduler)
+- [ ] [GitHub Pages Demo](https://jfulbright.github.io/JavaScript-Day-Scheduler/)
 
 
 ***
